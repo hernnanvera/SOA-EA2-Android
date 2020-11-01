@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ea2soa</string>
+    <string name="retrofit_server">http://so-unlam.net.ar/api/</string>
+</resources>
