@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.ea2soa.dto.SharedPreferencesManager;
 import com.example.ea2soa.dto.RegistroRequest;
 import com.example.ea2soa.dto.RegistroResponse;
 import com.example.ea2soa.services.SoaService;
@@ -34,6 +35,7 @@ public class RegistroActivity extends AppCompatActivity {
     private EditText txtEnv;
     private EditText txtPassword;
     private EditText txtComision;
+    private SharedPreferencesManager sharedPreferencesManager;
 
     private Button btnRegistrar;
 
@@ -41,6 +43,8 @@ public class RegistroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+
+        sharedPreferencesManager = new SharedPreferencesManager(getApplicationContext());
 
         txtNombre = (EditText) findViewById(R.id.txtNombre);
         txtApellido = (EditText) findViewById(R.id.txtApellido);
@@ -65,13 +69,12 @@ public class RegistroActivity extends AppCompatActivity {
                 return;
             }
 
-            if (txtPassword.getText().toString().length() < 8) {
-                Toast.makeText(RegistroActivity.this, "El campo Password requiere al menos 8 caracteres.", Toast.LENGTH_LONG).show();
+            if (!validarCampos()) {
                 return;
             }
 
             RegistroRequest request = new RegistroRequest();
-            request.setEnv("PROD");//PROD
+            request.setEnv("PROD");
             request.setName(txtNombre.getText().toString());
             request.setLastname(txtApellido.getText().toString());
             request.setDni(Long.parseLong(txtDni.getText().toString()));
@@ -93,11 +96,14 @@ public class RegistroActivity extends AppCompatActivity {
 
                     if (response.isSuccessful()) {
 
-                        Intent intentSensors;
-                        intentSensors = new Intent(RegistroActivity.this, SensorsActivity.class);
-                        startActivity(intentSensors);
+                        sharedPreferencesManager.guardarToken(response.body().getToken());
+                        sharedPreferencesManager.guardarToken(response.body().getTokenRefresh());
 
+                        Intent intentSensors;
+                        intentSensors = new Intent(RegistroActivity.this, MainActivity.class);
+                        startActivity(intentSensors);
                         Log.i(TAG, response.body().getToken());
+                        finish();
                     } else {
                         Log.i(TAG, response.errorBody().toString());
                     }
@@ -123,6 +129,75 @@ public class RegistroActivity extends AppCompatActivity {
         } else {
             return false;
         }
+    }
+
+    private boolean validarCampos() {
+        if(txtNombre.getText().toString().equals("")) {
+            Toast.makeText(RegistroActivity.this, "El campo nombre es requerido.", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        if(txtApellido.getText().toString().equals("")) {
+            Toast.makeText(RegistroActivity.this, "El campo apellido es requerido.", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        if(txtDni.getText().toString().equals("")) {
+            Toast.makeText(RegistroActivity.this, "El campo DNI es requerido", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        if(txtMail.getText().toString().equals("")) {
+            Toast.makeText(RegistroActivity.this, "El campo mail es requerido", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        if(txtPassword.getText().toString().equals("")) {
+            Toast.makeText(RegistroActivity.this, "El campo password es requerido.", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        if(txtPassword.getText().toString().length() < 8) {
+            Toast.makeText(RegistroActivity.this, "El campo password debe tener al menos 8 caracteres.", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        if(txtComision.getText().toString().equals("")) {
+            Toast.makeText(RegistroActivity.this, "El campo comision es requerido.", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    protected void onStart() {
+        Log.i(TAG, "Ejecuto OnStart");
+        super.onStart();
+    }
+
+
+    @Override
+    protected void onResume() {
+        Log.i(TAG, "Ejecuto onResume");
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        Log.i(TAG, "Ejecuto onPause");
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        Log.i(TAG, "Ejecuto onStop");
+        super.onStop();
+    }
+
+    @Override
+    protected void onRestart() {
+        Log.i(TAG, "Ejecuto onRestart");
+        super.onRestart();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Log.i(TAG, "Ejecuto OnDestroy");
+        super.onDestroy();
     }
 
 }

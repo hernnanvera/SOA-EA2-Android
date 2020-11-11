@@ -18,7 +18,7 @@ public class RegistroResponse {
 
     public  void setToken(String token){this.token = token;}
 
-    public  String gettoken_refresh(){ return token_refresh;}
+    public  String getTokenRefresh(){ return token_refresh;}
 
     public  void settoken_refresh(String token_refresh){this.token = token_refresh;}
 

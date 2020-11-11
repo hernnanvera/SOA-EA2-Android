@@ -13,7 +13,7 @@ public class LoginResponse {
 
     public  void setToken(String token){this.token = token;}
 
-    public  String getToken_refresh(){ return token_refresh;}
+    public  String getTokenRefresh(){ return token_refresh;}
 
     public  void setToken_refresh(String token_refresh){this.token = token_refresh;}
 }

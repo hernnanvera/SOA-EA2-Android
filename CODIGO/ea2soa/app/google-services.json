@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1089113265151",
+    "firebase_url": "https://loteriaapp-36591.firebaseio.com",
+    "project_id": "loteriaapp-36591",
+    "storage_bucket": "loteriaapp-36591.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1089113265151:android:01cf5bd84a49f41c794dca",
+        "android_client_info": {
+          "package_name": "com.example.ea2soa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1089113265151-0o35kmemq5llrmom05u4el0spdng9lvt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ea2soa",
+            "certificate_hash": "1812d7aea19119d622cbcb14441b477217edf5b4"
+          }
+        },
+        {
+          "client_id": "1089113265151-n4dpcc7pkhcn65aplp5ur2fsc8g5bnpv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnhZjIQOnQi6ao-RxcGE0iSV4OGUaAziw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1089113265151-n4dpcc7pkhcn65aplp5ur2fsc8g5bnpv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

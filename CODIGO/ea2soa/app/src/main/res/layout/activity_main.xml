@@ -6,63 +6,160 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnIniciarSesion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginLeft="144dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="143dp"
-        android:layout_marginRight="143dp"
-        android:text="Iniciar Sesion"
+    <TextView
+        android:id="@+id/lblSensores2"
+        android:layout_width="374dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Sacuda su telefono para obtener 3 numeros de loteria."
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPassword" />
-
-    <Button
-        android:id="@+id/btnRegistrarse"
-        android:layout_width="123dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="146dp"
-        android:layout_marginLeft="146dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="143dp"
-        android:layout_marginRight="143dp"
-        android:text="Registrarse"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnIniciarSesion" />
-
-    <EditText
-        android:id="@+id/txtUsuario"
-        android:layout_width="213dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="99dp"
-        android:layout_marginLeft="99dp"
-        android:layout_marginTop="195dp"
-        android:layout_marginEnd="99dp"
-        android:layout_marginRight="99dp"
-        android:ems="10"
-        android:hint="Usuario"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/txtPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="99dp"
-        android:layout_marginLeft="99dp"
-        android:layout_marginEnd="99dp"
-        android:layout_marginRight="99dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
+    <TextView
+        android:id="@+id/lblPrimerLugar"
+        android:layout_width="94dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="75dp"
+        android:text="Primer Lugar"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblSensores2" />
+
+    <TextView
+        android:id="@+id/lblTercerLugar"
+        android:layout_width="97dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="73dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:text="Tercer Lugar"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblSensores2" />
+
+    <TextView
+        android:id="@+id/lblNumero1"
+        style="@android:style/Widget.DeviceDefault.Light.TextView"
+        android:layout_width="96dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="13dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblPrimerLugar" />
+
+    <TextView
+        android:id="@+id/lblNumero2"
+        android:layout_width="96dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginLeft="41dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/lblNumero3"
+        app:layout_constraintStart_toEndOf="@+id/lblNumero1"
+        app:layout_constraintTop_toBottomOf="@+id/lblSegundoLugar" />
+
+    <TextView
+        android:id="@+id/lblNumero3"
+        android:layout_width="96dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblTercerLugar" />
+
+    <TextView
+        android:id="@+id/lblNumeros"
+        android:layout_width="138dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginLeft="136dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="137dp"
+        android:layout_marginRight="137dp"
+        android:text="Numeros"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtUsuario" />
+        app:layout_constraintTop_toBottomOf="@+id/lblSensores2" />
+
+    <TextView
+        android:id="@+id/lblSegundoLugar"
+        android:layout_width="98dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginLeft="41dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:text="Segundo Lugar"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/lblTercerLugar"
+        app:layout_constraintStart_toEndOf="@+id/lblPrimerLugar"
+        app:layout_constraintTop_toBottomOf="@+id/lblNumeros" />
+
+    <TextView
+        android:id="@+id/lblSensores"
+        android:layout_width="265dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="130dp"
+        android:layout_marginRight="130dp"
+        android:text="Valores de los sensores:"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblNumero1" />
+
+    <TextView
+        android:id="@+id/lblAcelerometro"
+        android:layout_width="386dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        android:text="Acelerometro"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblSensores" />
+
+    <TextView
+        android:id="@+id/lblGiroscopio"
+        android:layout_width="383dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        android:text="Giroscopio"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblAcelerometro" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
